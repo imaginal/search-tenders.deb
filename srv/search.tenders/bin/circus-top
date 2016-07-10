@@ -1,0 +1,46 @@
+#!/usr/bin/python
+
+import sys
+sys.path[0:0] = [
+  '/srv/search.tenders/eggs/Paste-2.0.2-py2.7.egg',
+  '/srv/search.tenders/eggs/setuptools-19.1.1-py2.7.egg',
+  '/srv/search.tenders/eggs/PasteScript-2.0.2-py2.7.egg',
+  '/srv/search.tenders/eggs/PasteDeploy-1.5.2-py2.7.egg',
+  '/srv/search.tenders/eggs/circus-0.12.1-py2.7.egg',
+  '/srv/search.tenders/eggs/gunicorn-19.3.0-py2.7.egg',
+  '/srv/search.tenders/eggs/elasticsearch-1.9.0-py2.7.egg',
+  '/srv/search.tenders/src/openprocurement_client',
+  '/srv/search.tenders/src/openprocurement.search',
+  '/srv/search.tenders/eggs/PyYAML-3.11-py2.7-linux-x86_64.egg',
+  '/srv/search.tenders/eggs/gevent-1.0.2-py2.7-linux-x86_64.egg',
+  '/srv/search.tenders/eggs/Flask-0.10.1-py2.7.egg',
+  '/srv/search.tenders/eggs/simplejson-3.8.1-py2.7-linux-x86_64.egg',
+  '/srv/search.tenders/eggs/python_dateutil-2.4.2-py2.7.egg',
+  '/srv/search.tenders/eggs/iso8601-0.1.10-py2.7.egg',
+  '/srv/search.tenders/eggs/requests-2.9.0-py2.7.egg',
+  '/srv/search.tenders/eggs/retrying-1.3.3-py2.7.egg',
+  '/srv/search.tenders/eggs/restkit-4.2.2-py2.7.egg',
+  '/srv/search.tenders/eggs/munch-2.0.4-py2.7.egg',
+  '/srv/search.tenders/eggs/urllib3-1.13-py2.7.egg',
+  '/srv/search.tenders/eggs/tornado-4.3-py2.7-linux-x86_64.egg',
+  '/srv/search.tenders/eggs/pyzmq-15.1.0-py2.7-linux-x86_64.egg',
+  '/srv/search.tenders/eggs/psutil-3.3.0-py2.7-linux-x86_64.egg',
+  '/srv/search.tenders/eggs/iowait-0.2-py2.7.egg',
+  '/srv/search.tenders/eggs/six-1.10.0-py2.7.egg',
+  '/srv/search.tenders/eggs/greenlet-0.4.9-py2.7-linux-x86_64.egg',
+  '/srv/search.tenders/eggs/itsdangerous-0.24-py2.7.egg',
+  '/srv/search.tenders/eggs/Jinja2-2.8-py2.7.egg',
+  '/srv/search.tenders/eggs/Werkzeug-0.11.2-py2.7.egg',
+  '/srv/search.tenders/eggs/socketpool-0.5.3-py2.7.egg',
+  '/srv/search.tenders/eggs/http_parser-0.8.3-py2.7-linux-x86_64.egg',
+  '/srv/search.tenders/eggs/backports_abc-0.4-py2.7.egg',
+  '/srv/search.tenders/eggs/certifi-2015.11.20.1-py2.7.egg',
+  '/srv/search.tenders/eggs/singledispatch-3.4.0.3-py2.7.egg',
+  '/srv/search.tenders/eggs/backports.ssl_match_hostname-3.4.0.2-py2.7.egg',
+  '/srv/search.tenders/eggs/MarkupSafe-0.23-py2.7-linux-x86_64.egg',
+  ]
+
+import circus.stats.client
+
+if __name__ == '__main__':
+    sys.exit(circus.stats.client.main())

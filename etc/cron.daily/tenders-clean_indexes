@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+BASEDIR=/srv/search.tenders
+INIFILE=/etc/search.tenders/search.ini
+LOGFILE=/var/log/search.tenders/clean_indexes.log
+
+[ -x $BASEDIR/bin/clean_indexes ] || exit 0
+
+cd $BASEDIR
+
+$BASEDIR/bin/clean_indexes $INIFILE >>$LOGFILE 2>&1
+

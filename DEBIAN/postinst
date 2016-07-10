@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ -x /usr/sbin/update-rc.d ] || exit 0
+
+/usr/sbin/update-rc.d search-tenders defaults
+

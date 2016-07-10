@@ -1,0 +1,12 @@
+search-tenders (0.1-2) stable; urgency=low
+
+ * Add DEBIAN/conffiles
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Thu Jun 16 12:48:47 EEST 2016
+
+search-tenders (0.1-1) stable; urgency=low
+
+ * Initial release
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Sun May  8 03:39:30 EEST 2016
+
