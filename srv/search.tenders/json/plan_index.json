@@ -193,6 +193,11 @@
               "analyzer": "whitespace",
               "type": "string"
             },
+            "procurementMethodType": {
+              "include_in_all": true,
+              "analyzer": "whitespace",
+              "type": "string"
+            },
             "tenderPeriod": {
               "properties": {
                 "endDate": {

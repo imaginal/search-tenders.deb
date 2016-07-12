@@ -1,3 +1,9 @@
+search-tenders (0.2-1) stable; urgency=low
+
+ * Fix bug in search by procurementMethodType == aboveThresholdUA
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Tue Jul 12 04:18:44 EEST 2016
+
 search-tenders (0.1-2) stable; urgency=low
 
  * Add DEBIAN/conffiles

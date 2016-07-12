@@ -629,6 +629,10 @@
                     "type": "string",
                     "analyzer": "whitespace"
                 },
+                "procurementMethodType": {
+                    "type": "string",
+                    "analyzer": "whitespace"
+                },
                 "procuringEntity": {
                     "include_in_all": true,
                     "properties": {
