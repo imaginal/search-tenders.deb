@@ -1,3 +1,15 @@
+search-tenders (0.3-1) stable; urgency=low
+
+ * Increase clean_indexes period to 10 days
+ * Add rename_{indexname} feature
+ * Add skip_until feature for tenders and plans
+ * Add possibility to disable one of indexes
+ * Update heartbeat during long indexing cycle
+ * Add retry after REST client 50x errors 
+ * Disable ocds_speed option, sleep(1) each 1k
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Fri Jul 22 15:30:53 EEST 2016
+
 search-tenders (0.2-1) stable; urgency=low
 
  * Fix bug in search by procurementMethodType == aboveThresholdUA
