@@ -1,3 +1,9 @@
+search-tenders (0.3-2) stable; urgency=low
+
+ * Improve indexer concurency and verbose logging
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Sat Jul 23 00:35:01 EEST 2016
+
 search-tenders (0.3-1) stable; urgency=low
 
  * Increase clean_indexes period to 10 days
