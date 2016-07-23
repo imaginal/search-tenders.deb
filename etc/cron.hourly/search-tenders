@@ -17,6 +17,7 @@ clean_indexes()
 restart_indexer()
 {
   WORKERS=`grep 'watcher:index_worker' $CONFDIR/circus.ini | tr '[]' ':' | cut -d: -f3`
+  echo `date` Restart $WORKERS >>$LOGSDIR/restart.log
   for W in $WORKERS
   do
     $BASEDIR/bin/circusctl stop $W >>$LOGSDIR/restart.log 2>&1
