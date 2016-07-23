@@ -1,8 +1,9 @@
 search-tenders (0.3-2) stable; urgency=low
 
  * Improve indexer concurency and verbose logging
+ * New cron.hourly maintenance task instead of cron.daily 
 
- -- Volodymyr Flonts <flyonts@gmail.com>  Sat Jul 23 00:35:01 EEST 2016
+ -- Volodymyr Flonts <flyonts@gmail.com>  Sat Jul 23 23:51:24 EEST 2016
 
 search-tenders (0.3-1) stable; urgency=low
 
