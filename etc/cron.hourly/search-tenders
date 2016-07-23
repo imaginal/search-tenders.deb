@@ -1,0 +1,47 @@
+#!/bin/sh
+
+BASEDIR=/srv/search.tenders
+CONFDIR=/etc/search.tenders
+LOGSDIR=/var/log/search.tenders
+
+cd $BASEDIR || exit 1
+
+clean_indexes()
+{
+  for INI in $CONFDIR/search*.ini
+  do
+    $BASEDIR/bin/clean_indexes $INI >>$LOGSDIR/clean_indexes.log 2>&1
+  done
+}
+
+restart_indexer()
+{
+  WORKERS=`grep 'watcher:index_worker' $CONFDIR/circus.ini | tr '[]' ':' | cut -d: -f3`
+  for W in $WORKERS
+  do
+    $BASEDIR/bin/circusctl stop $W >>$LOGSDIR/restart.log 2>&1
+  done
+  sleep 5
+  for W in $WORKERS
+  do
+    $BASEDIR/bin/circusctl start $W >>$LOGSDIR/restart.log 2>&1
+  done
+}
+
+ocds_ftpsync()
+{
+  $BASEDIR/bin/ocds_ftpsync $CONFDIR/ftpsync.ini >>$LOGSDIR/ftpsync.log 2>&1
+}
+
+if [ `date +%H` -eq 6 ]
+then
+  ocds_ftpsync
+  clean_indexes
+  restart_indexer
+fi
+
+if [ `date +%H` -eq 12 ]
+then
+  ocds_ftpsync
+fi
+
