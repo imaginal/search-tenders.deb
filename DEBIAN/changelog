@@ -1,4 +1,4 @@
-search-tenders (0.4-1) stable; urgency=low
+search-tenders (0.4-2) stable; urgency=low
 
  * Add orgs suggest live indexing
  * Add standalone update_orgs indexer
@@ -6,8 +6,10 @@ search-tenders (0.4-1) stable; urgency=low
  * Add cron_tasks script, change cron.daily to cron.d
  * Add range search by value.amount
  * Fix bug with CPV search in plans
+ * Update socket setdefaulttimeout
+ * Index missing orgs in update_orgs
 
- -- Volodymyr Flonts <flyonts@gmail.com>  Mon Sep 12 06:01:14 EEST 2016
+ -- Volodymyr Flonts <flyonts@gmail.com>  Mon Sep 12 20:11:21 EEST 2016
 
 search-tenders (0.3-5) stable; urgency=low
 

@@ -41,7 +41,7 @@ daemon_stop() {
     fi
     echo "Stopping $DAEMON pid "`cat $PIDFILE`
     $CONTROL stop
-    sleep 1
+    sleep 3
     $CONTROL quit
     sleep 1
     if [ -s $PIDFILE ] ; then
