@@ -1,9 +1,24 @@
-search-tenders (0.3-2) stable; urgency=low
+search-tenders (0.4-1) stable; urgency=low
 
+ * Add orgs suggest live indexing
+ * Add standalone update_orgs indexer
+ * Add signal handler and verbose exception logging
+ * Add cron_tasks script, change cron.daily to cron.d
+ * Add range search by value.amount
+ * Fix bug with CPV search in plans
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Mon Sep 12 06:01:14 EEST 2016
+
+search-tenders (0.3-5) stable; urgency=low
+
+ * Merge changelog 0.3-2 to 0.3-5
+ * Change: Full reindex in weekend in any time
+ * Fix: don't leave loop on full reindexing
+ * Fix: leave indexing loop if nothing returned
  * Improve indexer concurency and verbose logging
  * New cron.hourly maintenance task instead of cron.daily 
 
- -- Volodymyr Flonts <flyonts@gmail.com>  Sat Jul 23 23:51:24 EEST 2016
+ -- Volodymyr Flonts <flyonts@gmail.com>  Mon Jul 25 00:07:11 EEST 2016
 
 search-tenders (0.3-1) stable; urgency=low
 
