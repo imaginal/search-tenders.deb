@@ -1,3 +1,36 @@
+search-tenders (0.5-3) stable; urgency=low
+
+ * Force "and" operator for query match _all
+ * Ignore index errors feature may be allowed in config
+ * Update orgs index after each source processed
+ * Fix bug in source.reset which keep params offset
+ * Add tender_reindex and plan_reindex options
+ * Add indexer start_wait option (in seconds)
+ * Add heartbeat index statistics
+ * Add custom_index_names command line argument
+ * Update tender index settings, add analyzer
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Wed Oct 12 15:02:34 EEST 2016
+
+search-tenders (0.5-1) stable; urgency=low
+
+ * Don't index competitiveDialogueUA.stage2 with status == draft.stage2
+ * Preload feature in tender and plan index source
+ * Use limit=1000 for query changes feed
+ * Create system user `searchtenders` and run workers using it
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Sat Oct  1 21:45:05 EEST 2016
+
+search-tenders (0.4-3) stable; urgency=low
+
+ * Fix index creation bug for OCDS index
+ * Update skip_until feature for full reindex procedure
+ * Add ocds_skip_until feature for OCDS
+ * Add update_orgs_days feature for update_orgs
+ * Improve stability of update_orgs
+
+ -- Volodymyr Flonts <flyonts@gmail.com>  Wed Sep 21 19:05:03 EEST 2016
+
 search-tenders (0.4-2) stable; urgency=low
 
  * Add orgs suggest live indexing
@@ -6,6 +39,7 @@ search-tenders (0.4-2) stable; urgency=low
  * Add cron_tasks script, change cron.daily to cron.d
  * Add range search by value.amount
  * Fix bug with CPV search in plans
+ * Merge changelog 0.4-1 to 0.4-2
  * Update socket setdefaulttimeout
  * Index missing orgs in update_orgs
 

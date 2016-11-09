@@ -15,7 +15,7 @@
 # Description:       Enable search api for prozorro.gov.ua
 ### END INIT INFO
 
-set -e
+#set -e
 
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 
@@ -29,9 +29,10 @@ SOCKET="/srv/search.tenders/var/circus_endpoint"
 WORKDIR="/srv/search.tenders/var"
 
 daemon_start() {
-    echo "Starting $DAEMON"
     cd $WORKDIR
     $DAEMON --daemon
+    sleep 1
+    echo "Starting $DAEMON pid" `cat $PIDFILE`
 }
 
 daemon_stop() {
@@ -40,14 +41,11 @@ daemon_stop() {
       return
     fi
     echo "Stopping $DAEMON pid "`cat $PIDFILE`
-    $CONTROL stop
-    sleep 3
     $CONTROL quit
-    sleep 1
-    if [ -s $PIDFILE ] ; then
-      kill `$PIDFILE`
+    while [ -S $SOCKET ]
+    do
       sleep 1
-    fi
+    done
 }
 
 daemon_restart() {
@@ -56,7 +54,7 @@ daemon_restart() {
     daemon_start
 }
 
-daemon_status() {
+daemon_tatus() {
     if [ -s $PIDFILE ] ; then
       if ps aux | grep `cat $PIDFILE` | grep circus >/dev/null ; then
         $CONTROL status

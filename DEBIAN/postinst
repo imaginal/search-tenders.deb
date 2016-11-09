@@ -1,6 +1,13 @@
 #!/bin/sh
 
-[ -x /usr/sbin/update-rc.d ] || exit 0
+if ! id searchtenders ; then
+  adduser --system --home /srv/search.tenders --no-create-home --shell /bin/false --group searchtenders
+fi
 
-/usr/sbin/update-rc.d search-tenders defaults
+chown searchtenders:searchtenders /srv/search.tenders/var
+chown searchtenders:searchtenders /var/log/search.tenders
+
+if [ -x /usr/sbin/update-rc.d ] ; then
+  /usr/sbin/update-rc.d search-tenders defaults
+fi
 
